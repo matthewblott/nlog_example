@@ -13,14 +13,14 @@ namespace nlog_example
     {
       var configuration = new ConfigurationBuilder()
         .SetBasePath(Directory.GetCurrentDirectory())
-        .AddJsonFile("appsettings.json", optional: true).Build();
+        .AddJsonFile("appsettings.json", true).Build();
 
       var services = new ServiceCollection();
 
       services.AddSingleton<ILoggerFactory, LoggerFactory>();
       services.AddSingleton(typeof(ILogger<>), typeof(Logger<>));
       services.AddLogging((builder) => builder.SetMinimumLevel(LogLevel.Trace));
-      services.AddSingleton<IConfigurationRoot>(configuration);
+      services.AddSingleton(configuration);
       services.AddOptions();
       services.Configure<MyOptions>(configuration.GetSection(nameof(MyOptions)));
       services.AddTransient<IApplication, Application>();
