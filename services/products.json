@@ -1,0 +1,22 @@
+[
+  {
+    "Id": 1,
+    "Sku": "TAP01",
+    "Name": "Tape"
+  },
+  {
+    "Id": 2,
+    "Sku": "PAP01",
+    "Name": "Paper"
+  },
+  {
+    "Id": 3,
+    "Sku": "CAR01",
+    "Name": "Card"
+  },
+  {
+    "Id": 4,
+    "Sku": "SCI01",
+    "Name": "Scissors"
+  }
+]
